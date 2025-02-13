@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Camera cam;
 
     private float inputX;
     private float inputY;
@@ -28,6 +29,11 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Movement();//物理帧更新移动
+    }
+
+    private void LateUpdate()
+    {
+        //相机跟随
     }
 
     private void PlayerInput()
