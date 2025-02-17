@@ -10,7 +10,7 @@ public class SwitchBounds : MonoBehaviour
 {
 
     private void Start(){
-        SwitchConfinerShape();
+        SwitchConfinerShape(); 
     }
 
     private void SwitchConfinerShape(){
