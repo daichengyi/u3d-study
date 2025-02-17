@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -28,12 +26,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();//ÎïÀíÖ¡¸üÐÂÒÆ¶¯
+        Movement();//ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
     }
 
     private void LateUpdate()
     {
-        //Ïà»ú¸úËæ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
     private void PlayerInput()
@@ -43,7 +41,7 @@ public class Player : MonoBehaviour
         // if(inputY == 0)
         inputY = Input.GetAxisRaw("Vertical");
 
-        //ÐÞÕýÐ±·½ÏòÒÆ¶¯ËÙ¶È
+        //ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ù¶ï¿½
         if (inputX != 0 && inputY != 0) {
             inputX = inputX * 0.6f;
             inputY = inputY * 0.6f;
