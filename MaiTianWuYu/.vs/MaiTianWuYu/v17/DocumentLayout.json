@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "F:\\u3d-study\\MaiTianWuYu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|f:\\u3d-study\\maitianwuyu\\assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|f:\\u3d-study\\maitianwuyu\\assets\\scripts\\player\\triggeritemfader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\triggeritemfader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player.cs",
-              "ToolTip": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\Player.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAYwDAAAAAjAAAA",
+              "Title": "TriggerItemFader.cs",
+              "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\TriggerItemFader.cs",
+              "ToolTip": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\TriggerItemFader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T06:21:51.876Z",
+              "WhenOpened": "2025-02-18T02:13:40.653Z",
               "EditorCaption": ""
             }
           ]
