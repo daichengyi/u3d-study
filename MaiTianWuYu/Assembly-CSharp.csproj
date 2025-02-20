@@ -61,6 +61,9 @@
     <Analyzer Include="D:\Program Files\2022.3.49f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\UI Builder\ItemEditor.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Data SO\ItemDataList_SO.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Item\ItemFader.cs" />
     <Compile Include="Assets\Scripts\Item\ItemFader.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Utilites\DataColiection.cs" />
@@ -1079,6 +1082,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Editor\UI Builder.meta" />
+    <None Include="Assets\Editor\UI Builder\ItemEditor.cs.meta" />
+    <None Include="Assets\Editor\UI Builder\ItemEditor.uss" />
+    <None Include="Assets\Editor\UI Builder\ItemEditor.uss.meta" />
+    <None Include="Assets\Editor\UI Builder\ItemEditor.uxml" />
+    <None Include="Assets\Editor\UI Builder\ItemEditor.uxml.meta" />
+    <None Include="Assets\Scripts\Inventory\Data SO.meta" />
+    <None Include="Assets\Scripts\Inventory\Data SO\ItemDataList_SO.cs.meta" />
+    <None Include="Assets\Scripts\Inventory\Item.meta" />
+    <None Include="Assets\Scripts\Inventory\Item\ItemFader.cs.meta" />
     <None Include="Assets\Scripts\Item\ItemFader.cs.meta" />
     <None Include="Assets\Scripts\Utilites\DataColiection.cs.meta" />
     <None Include="Assets\Scripts\Utilites\Enums.cs.meta" />
