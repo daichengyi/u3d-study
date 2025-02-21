@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Linq;
 
 public class ItemEditor : EditorWindow
 {
     private ItemDataList_SO dataBase;
     private List<ItemDetails> itemList = new List<ItemDetails>();
     private VisualTreeAsset itemRowTemplate;
+    private ScrollView itemDetailsSection;
 
     //获得 VisualElement 组件
     private ListView itemListView;
+    private ItemDetails activeItem;//物品信息
 
     [SerializeField]
     private VisualTreeAsset m_VisualTreeAsset = default;
@@ -26,7 +29,7 @@ public class ItemEditor : EditorWindow
     public void CreateGUI()
     {
         // Each editor window contains a root VisualElement object
-        VisualElement root = rootVisualElement;
+        VisualElement root = rootVisualElement;// root 对应 Container
 
         // VisualElements objects can contain other VisualElement following a tree hierarchy.
         // VisualElement label = new Label("Hello World! From C#");
@@ -40,8 +43,8 @@ public class ItemEditor : EditorWindow
         itemRowTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/UI Builder/ItemRowTemplate.uxml");
 
         //获得 ListView 组件
-        // root 对应 Container
         itemListView = root.Q<VisualElement>("ItemList").Q<ListView>("ListView");
+        itemDetailsSection = root.Q<ScrollView>("ItemDetails");
 
         //加载数据
         LoadDataBase();
@@ -77,5 +80,33 @@ public class ItemEditor : EditorWindow
         itemListView.itemsSource = itemList;
         itemListView.makeItem = makeItem;
         itemListView.bindItem = bindItem;
+
+        itemListView.selectionChanged += OnItemSelectionChange;
+
+        itemDetailsSection.visible = false;
+    }
+
+    private void OnItemSelectionChange(IEnumerable<object> selectedItems){
+        activeItem = selectedItems.First() as ItemDetails;
+        GetItemDetails();
+        itemDetailsSection.visible = true;
+    }
+
+    private void GetItemDetails(){
+        itemDetailsSection.MarkDirtyRepaint();
+
+        itemDetailsSection.Q<IntegerField>("ItemID").value = activeItem.itemID;
+        itemDetailsSection.Q<IntegerField>("ItemID").RegisterValueChangedCallback(evt=>{
+            //值有变动时刷新
+            activeItem.itemID = evt.newValue;
+        });
+
+        itemDetailsSection.Q<TextField>("ItemName").value = activeItem.itemName;
+        itemDetailsSection.Q<TextField>("ItemName").RegisterCallback<ChangeEvent<string>>(evt=>{
+            activeItem.itemName = evt.newValue;
+        });
+
+        // itemDetailsSection.Q<TextField>("ItemDescription").value = activeItem.itemDescription;
+        
     }
 }
