@@ -1,9 +1,10 @@
 using UnityEngine;
 
-[System.Serializable]//序列化
+//序列化
+[System.Serializable]
 public class ItemDetails {
     public int itemID;
-    public string name;
+    public string itemName;
     public ItemType itemType;
     public Sprite itemIcon;
     public Sprite itemOnWorldSprite;//世界地图产生时用

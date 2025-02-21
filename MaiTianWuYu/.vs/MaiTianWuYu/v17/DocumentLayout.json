@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "F:\\u3d-study\\MaiTianWuYu\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|f:\\u3d-study\\maitianwuyu\\assets\\gamedata\\inventory\\itemdatalist_so.asset||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:assets\\gamedata\\inventory\\itemdatalist_so.asset||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player\\TriggerItemFader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ItemDataList_SO.asset",
+              "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
+              "RelativeDocumentMoniker": "Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
+              "ToolTip": "F:\\u3d-study\\MaiTianWuYu\\Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
+              "RelativeToolTip": "Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-21T03:01:26.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TriggerItemFader.cs",
               "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\TriggerItemFader.cs",
               "ToolTip": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\TriggerItemFader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T02:13:40.653Z",
               "EditorCaption": ""
