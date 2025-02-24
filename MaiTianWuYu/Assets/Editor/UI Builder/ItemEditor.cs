@@ -55,8 +55,8 @@ public class ItemEditor : EditorWindow
         iconPreview = itemDetailsSection.Q<VisualElement>("Icon");
 
         //获得按键
-        // root.Q<Button>("AddButton").clicked += OnAddItemClicked;
-        // root.Q<Button>("DeleteButton").clicked += OnDeleteClicked;
+        root.Q<Button>("AddButton").clicked += OnAddItemClicked;
+        root.Q<Button>("DeleteButton").clicked += OnDeleteClicked;
 
         //加载数据
         LoadDataBase();
