@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
+using UnityEditor.UIElements;
 
 public class ItemEditor : EditorWindow
 {
@@ -11,10 +12,13 @@ public class ItemEditor : EditorWindow
     private List<ItemDetails> itemList = new List<ItemDetails>();
     private VisualTreeAsset itemRowTemplate;
     private ScrollView itemDetailsSection;
+    private ItemDetails activeItem;//物品信息
 
+//默认预览图片
+    private Sprite defaultIcon;
+    private VisualElement iconPreview;
     //获得 VisualElement 组件
     private ListView itemListView;
-    private ItemDetails activeItem;//物品信息
 
     [SerializeField]
     private VisualTreeAsset m_VisualTreeAsset = default;
@@ -42,15 +46,41 @@ public class ItemEditor : EditorWindow
         //拿到模板数据
         itemRowTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/UI Builder/ItemRowTemplate.uxml");
 
+        //拿默认Icon图片
+        defaultIcon = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/M Studio/Art/Items/Icons/icon_M.png");
+
         //获得 ListView 组件
         itemListView = root.Q<VisualElement>("ItemList").Q<ListView>("ListView");
         itemDetailsSection = root.Q<ScrollView>("ItemDetails");
+        iconPreview = itemDetailsSection.Q<VisualElement>("Icon");
+
+        //获得按键
+        // root.Q<Button>("AddButton").clicked += OnAddItemClicked;
+        // root.Q<Button>("DeleteButton").clicked += OnDeleteClicked;
 
         //加载数据
         LoadDataBase();
         //生成 ListView
         GenerateListView();
     }
+
+    #region 按键事件
+    private void OnDeleteClicked()
+    {
+        itemList.Remove(activeItem);
+        itemListView.Rebuild();
+        itemDetailsSection.visible = false;
+    }
+
+    private void OnAddItemClicked()
+    {
+        ItemDetails newItem = new ItemDetails();
+        newItem.itemName = "NEW ITEM";
+        newItem.itemID = 1001 + itemList.Count;
+        itemList.Add(newItem);
+        itemListView.Rebuild();
+    }
+    #endregion
 
     private  void LoadDataBase(){
         //查找对应类型文件
@@ -82,7 +112,6 @@ public class ItemEditor : EditorWindow
         itemListView.bindItem = bindItem;
 
         itemListView.selectionChanged += OnItemSelectionChange;
-
         itemDetailsSection.visible = false;
     }
 
@@ -102,11 +131,76 @@ public class ItemEditor : EditorWindow
         });
 
         itemDetailsSection.Q<TextField>("ItemName").value = activeItem.itemName;
-        itemDetailsSection.Q<TextField>("ItemName").RegisterCallback<ChangeEvent<string>>(evt=>{
+        itemDetailsSection.Q<TextField>("ItemName").RegisterValueChangedCallback(evt=>{
             activeItem.itemName = evt.newValue;
+            itemListView.Rebuild();//更新左侧列表
         });
 
-        // itemDetailsSection.Q<TextField>("ItemDescription").value = activeItem.itemDescription;
-        
+        iconPreview.style.backgroundImage = activeItem.itemIcon == null ? defaultIcon.texture : activeItem.itemIcon.texture;
+        itemDetailsSection.Q<ObjectField>("ItemIcon").value = activeItem.itemIcon;
+        itemDetailsSection.Q<ObjectField>("ItemIcon").RegisterValueChangedCallback(evt =>
+        {
+            Sprite newIcon = evt.newValue as Sprite;
+            activeItem.itemIcon = newIcon;
+
+            iconPreview.style.backgroundImage = newIcon == null ? defaultIcon.texture : newIcon.texture;
+            itemListView.Rebuild();
+        });
+
+        //其他所有变量的绑定
+        itemDetailsSection.Q<ObjectField>("ItemSprite").value = activeItem.itemOnWorldSprite;
+        itemDetailsSection.Q<ObjectField>("ItemSprite").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.itemOnWorldSprite = (Sprite)evt.newValue;
+        });
+
+        itemDetailsSection.Q<EnumField>("ItemType").Init(activeItem.itemType);
+        itemDetailsSection.Q<EnumField>("ItemType").value = activeItem.itemType;
+        itemDetailsSection.Q<EnumField>("ItemType").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.itemType = (ItemType)evt.newValue;
+        });
+
+        itemDetailsSection.Q<TextField>("Description").value = activeItem.itemDescription;
+        itemDetailsSection.Q<TextField>("Description").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.itemDescription = evt.newValue;
+        });
+
+        itemDetailsSection.Q<IntegerField>("ItemUseRadius").value = activeItem.itemUseRadius;
+        itemDetailsSection.Q<IntegerField>("ItemUseRadius").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.itemUseRadius = evt.newValue;
+        });
+
+        itemDetailsSection.Q<Toggle>("CanPickedup").value = activeItem.canPickedup;
+        itemDetailsSection.Q<Toggle>("CanPickedup").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.canPickedup = evt.newValue;
+        });
+
+        itemDetailsSection.Q<Toggle>("CanDropped").value = activeItem.canDropped;
+        itemDetailsSection.Q<Toggle>("CanDropped").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.canDropped = evt.newValue;
+        });
+
+        itemDetailsSection.Q<Toggle>("CanCarried").value = activeItem.canCarried;
+        itemDetailsSection.Q<Toggle>("CanCarried").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.canCarried = evt.newValue;
+        });
+
+        itemDetailsSection.Q<IntegerField>("Price").value = activeItem.itemPrice;
+        itemDetailsSection.Q<IntegerField>("Price").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.itemPrice = evt.newValue;
+        });
+
+        itemDetailsSection.Q<Slider>("SellPercentage").value = activeItem.sellPercentage;
+        itemDetailsSection.Q<Slider>("SellPercentage").RegisterValueChangedCallback(evt =>
+        {
+            activeItem.sellPercentage = evt.newValue;
+        });
     }
 }
