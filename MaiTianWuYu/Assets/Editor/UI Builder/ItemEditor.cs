@@ -75,7 +75,7 @@ public class ItemEditor : EditorWindow
     private void OnAddItemClicked()
     {
         ItemDetails newItem = new ItemDetails();
-        newItem.itemName = "NEW ITEM";
+        newItem.itemName = "NEW ITEM"; 
         newItem.itemID = 1001 + itemList.Count;
         itemList.Add(newItem);
         itemListView.Rebuild();
