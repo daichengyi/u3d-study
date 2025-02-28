@@ -12,6 +12,15 @@ namespace MFarm.Inventory
         {
             return itemDataList_SO.itemDetailsList.Find(i => i.itemID == itemID);
         }
+
+        
+        public void AddItem(Item item, bool toDestroy)
+        {
+            Debug.Log(string.Format("获得物品{0}",item.itemID));
+            if (toDestroy) { 
+                Destroy(item.gameObject);
+            }
+        }
     }
 
 }

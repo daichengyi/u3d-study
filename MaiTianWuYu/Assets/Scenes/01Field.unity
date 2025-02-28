@@ -41636,10 +41636,10 @@ PrefabInstance:
     - target: {fileID: 4390650397891154152, guid: 4efa238faabd92344b21c18cd5418156, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 2597146da57814c789a59eda5740c9bf, type: 3}
     - target: {fileID: 4390650397891154152, guid: 4efa238faabd92344b21c18cd5418156, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8445179146631616721, guid: 4efa238faabd92344b21c18cd5418156, type: 3}
       propertyPath: m_LocalPosition.y
