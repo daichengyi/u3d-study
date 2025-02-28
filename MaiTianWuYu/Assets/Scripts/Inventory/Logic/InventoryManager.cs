@@ -8,9 +8,10 @@ namespace MFarm.Inventory
     {
         public ItemDataList_SO itemDataList_SO;
 
-        public ItemDetails GetItemDetails(int itemID){
+        public ItemDetails GetItemDetails(int itemID)
+        {
             return itemDataList_SO.itemDetailsList.Find(i => i.itemID == itemID);
         }
     }
-    
+
 }

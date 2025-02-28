@@ -9,6 +9,7 @@ namespace MFarm.Inventory
         public int itemID;
 
         private SpriteRenderer spriteRenderer;
+        private BoxCollider2D coll;
         private ItemDetails itemDetails;
 
         /// <summary>
@@ -16,23 +17,32 @@ namespace MFarm.Inventory
         /// </summary>
         private void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            coll = GetComponent<BoxCollider2D>();
         }
 
-        private void Start(){
-            if(itemID != 0){
+        private void Start()
+        {
+            if (itemID != 0)
+            {
                 Init(itemID);
             }
         }
 
-        public void Init(int ID){
+        public void Init(int ID)
+        {
             itemID = ID;
-
+            //InventoryManager 获得当前数据
             itemDetails = InventoryManager.Instance.GetItemDetails(itemID);
-            if(itemDetails != null){
-                spriteRenderer.sprite = itemDetails.itemOnWorldSprite  !=null ?itemDetails.itemOnWorldSprite:itemDetails.itemIcon;
+            if (itemDetails != null)
+            {
+                spriteRenderer.sprite = !itemDetails.itemOnWorldSprite ? itemDetails.itemOnWorldSprite : itemDetails.itemIcon;
+
+                //碰撞区域 动态适配物品尺寸
+                Vector2 newSize = new Vector2(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
+                coll.size = newSize;
             }
         }
     }
-    
+
 }
