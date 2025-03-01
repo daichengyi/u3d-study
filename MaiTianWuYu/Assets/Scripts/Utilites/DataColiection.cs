@@ -2,7 +2,8 @@ using UnityEngine;
 
 //序列化
 [System.Serializable]
-public class ItemDetails {
+public class ItemDetails
+{
     public int itemID;
     public string itemName;
     public ItemType itemType;
@@ -18,5 +19,17 @@ public class ItemDetails {
     public int itemPrice;//价格
     [Range(0, 1)]
     public float sellPercentage;//出售百分比
-    
+
+}
+
+/** 
+ *结构体
+ * struct 和 class 的区别： class需要判断数据为空，struct只需要关心id是否为0
+*/
+[System.Serializable]
+public struct InventoryItem
+{
+    public int itemID;
+
+    public int itemAmount;
 }
