@@ -24,16 +24,69 @@ namespace MFarm.Inventory
         /// <param name="toDestroy"></param>
         public void AddItem(Item item, bool toDestroy)
         {
-            InventoryItem newItem = new InventoryItem();
-            newItem.itemID = item.itemID;
-            newItem.itemAmount = 1;
-
-            playerBag.itemList[0] = newItem;
+            int index = GetItemIndexInBag(item.itemID);
+            AddItemAtIndex(item.itemID, index, 1);
 
             Debug.Log(string.Format("获得物品{0}", item.itemID));
             if (toDestroy)
             {
                 Destroy(item.gameObject);
+            }
+        }
+
+        private int GetItemIndexInBag(int ID)
+        {
+            for (int i = 0; i < playerBag.itemList.Count; i++)
+            {
+                if (playerBag.itemList[i].itemID == ID)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// 检查背包容量
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckBagCapacity()
+        {
+            for (int i = 0; i < playerBag.itemList.Count; i++)
+            {
+                if (playerBag.itemList[i].itemID == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 指定位置添加物品
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="index"></param>
+        /// <param name="amount"></param>
+        private void AddItemAtIndex(int ID, int index, int amount)
+        {
+            if (index == -1 && CheckBagCapacity())
+            {
+                InventoryItem item = new InventoryItem { itemID = ID, itemAmount = amount };
+                for (int i = 0; i < playerBag.itemList.Count; i++)
+                {
+                    if (playerBag.itemList[i].itemID == 0)
+                    {
+                        playerBag.itemList[i] = item;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                int currentAmount = playerBag.itemList[index].itemAmount + amount;
+                InventoryItem item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
+                playerBag.itemList[index] = item;
             }
         }
     }
