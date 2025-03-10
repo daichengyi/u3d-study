@@ -72,7 +72,7 @@ namespace MFarm.Inventory
         {
             if (index == -1 && CheckBagCapacity())
             {
-                InventoryItem item = new InventoryItem { itemID = ID, itemAmount = amount };
+                InventoryItem item = new() { itemID = ID, itemAmount = amount };
                 for (int i = 0; i < playerBag.itemList.Count; i++)
                 {
                     if (playerBag.itemList[i].itemID == 0)
@@ -85,7 +85,7 @@ namespace MFarm.Inventory
             else
             {
                 int currentAmount = playerBag.itemList[index].itemAmount + amount;
-                InventoryItem item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
+                InventoryItem item = new() { itemID = ID, itemAmount = currentAmount };
                 playerBag.itemList[index] = item;
             }
         }

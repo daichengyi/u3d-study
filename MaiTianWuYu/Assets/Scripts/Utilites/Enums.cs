@@ -15,3 +15,7 @@ public enum ItemType{
     
     
 }
+
+public enum SlotType{
+    Bag,Box,Shop
+}

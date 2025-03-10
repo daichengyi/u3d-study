@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "F:\\u3d-study\\MaiTianWuYu\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|f:\\u3d-study\\maitianwuyu\\assets\\scripts\\inventory\\ui\\slotui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\ui\\slotui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|f:\\u3d-study\\maitianwuyu\\assets\\scripts\\inventory\\logic\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\logic\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,8 +23,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\GameData\\Inventory\\ItemDataList_SO.asset||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Player\\TriggerItemFader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|f:\\u3d-study\\maitianwuyu\\assets\\scripts\\player\\triggeritemfader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46D743C-4A8D-97A5-DAD7-5542715D509C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\triggeritemfader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,19 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SlotUI.cs",
+              "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Inventory\\UI\\SlotUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\UI\\SlotUI.cs",
+              "ToolTip": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Inventory\\UI\\SlotUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory\\UI\\SlotUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T08:13:55.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "InventoryManager.cs",
               "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Inventory\\Logic\\InventoryManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\Logic\\InventoryManager.cs",
               "ToolTip": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Inventory\\Logic\\InventoryManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Inventory\\Logic\\InventoryManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABRAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T08:02:44.496Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ItemPickUp.cs",
               "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Inventory\\Item\\ItemPickUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\Item\\ItemPickUp.cs",
@@ -55,12 +72,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Inventory\\Item\\ItemPickUp.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T07:45:34.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T07:45:34.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Item.cs",
               "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Inventory\\Item\\Item.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\Item\\Item.cs",
@@ -68,12 +84,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Inventory\\Item\\Item.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T03:47:16.21Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T03:47:16.21Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ItemDataList_SO.asset",
               "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
               "RelativeDocumentMoniker": "Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
@@ -81,12 +96,11 @@
               "RelativeToolTip": "Assets\\GameData\\Inventory\\ItemDataList_SO.asset",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-21T03:01:26.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T03:01:26.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TriggerItemFader.cs",
               "DocumentMoniker": "F:\\u3d-study\\MaiTianWuYu\\Assets\\Scripts\\Player\\TriggerItemFader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\TriggerItemFader.cs",
