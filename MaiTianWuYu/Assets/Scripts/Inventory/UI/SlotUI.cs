@@ -5,22 +5,26 @@ using UnityEngine.UI;
 public class SlotUI : MonoBehaviour
 {
     [Header("组件获取")]
-    [SerializeField]private Image slotImage;
-    [SerializeField]private TextMeshProUGUI amountText;
-    [SerializeField]private Image slotHightlight;
-    [SerializeField]private Button button;
+    [SerializeField] private Image slotImage;
+    [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private Image slotHightlight;
+    [SerializeField] private Button button;
     [Header("格子类型")]
     public SlotType slotType;
 
     public bool isSelected;
 
+    public int slotIndex;
+
     //物品信息
     public ItemDetails itemDetails;
     public int itemAmount;
 
-    private void Start() {
+    private void Start()
+    {
         isSelected = false;
-        if(itemDetails.itemID == 0){
+        if (itemDetails.itemID == 0)
+        {
             UpdateEmptySlot();
         }
     }
@@ -30,7 +34,8 @@ public class SlotUI : MonoBehaviour
     /// </summary>
     /// <param name="item"></param>
     /// <param name="amount"></param>
-    public void UpdateSlot(ItemDetails item,int amount){
+    public void UpdateSlot(ItemDetails item, int amount)
+    {
         itemDetails = item;
         itemAmount = amount;
         slotImage.enabled = true;
@@ -39,8 +44,10 @@ public class SlotUI : MonoBehaviour
         button.interactable = true;
     }
 
-    public void UpdateEmptySlot(){
-        if(isSelected){
+    public void UpdateEmptySlot()
+    {
+        if (isSelected)
+        {
             isSelected = false;
         }
         slotImage.enabled = false;

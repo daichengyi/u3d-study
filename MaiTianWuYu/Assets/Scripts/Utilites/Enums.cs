@@ -1,4 +1,5 @@
-public enum ItemType{
+public enum ItemType
+{
     Seed,//种子
     Commodity,//商品
     Furniture,//家具
@@ -12,10 +13,16 @@ public enum ItemType{
 
 
     ReapableScenery//杂草
-    
-    
+
+
 }
 
-public enum SlotType{
-    Bag,Box,Shop
+public enum SlotType
+{
+    Bag, Box, Shop
+}
+
+public enum InventoryLocation
+{
+    Player, Box
 }

@@ -11,6 +11,11 @@ namespace MFarm.Inventory
         [Header("背包数据")]
         public InventoryBag_SO playerBag;
 
+        private void Start()
+        {
+            EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+        }
+
         public ItemDetails GetItemDetails(int itemID)
         {
             return itemDataList_SO.itemDetailsList.Find(i => i.itemID == itemID);
@@ -32,6 +37,9 @@ namespace MFarm.Inventory
             {
                 Destroy(item.gameObject);
             }
+
+            //更新UI
+            EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
 
         private int GetItemIndexInBag(int ID)

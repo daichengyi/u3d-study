@@ -65,12 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Inventory\Data SO\InventoryBag_SO.cs" />
-    <Compile Include="Assets\Scripts\Inventory\UI\SlotUI.cs" />
     <Compile Include="Assets\Scripts\Utilites\SwitchBounds.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item\Item.cs" />
     <Compile Include="Assets\Scripts\Player\TriggerItemFader.cs" />
+    <Compile Include="Assets\Scripts\Utilites\EventHandler.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Inventory\UI\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Utilites\Enums.cs" />
     <Compile Include="Assets\Scripts\Utilites\DataColiection.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item\ItemFader.cs" />
@@ -78,9 +79,9 @@
     <Compile Include="Assets\Scripts\Inventory\Item\ItemPickUp.cs" />
     <Compile Include="Assets\Scripts\Inventory\Data SO\ItemDataList_SO.cs" />
     <Compile Include="Assets\Scripts\Utilites\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Inventory\UI\SlotUI.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\Inventory\UI\SlotUI.cs.meta" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
