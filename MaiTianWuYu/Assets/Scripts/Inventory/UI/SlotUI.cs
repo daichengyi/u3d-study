@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SlotUI : MonoBehaviour, IPointerClickHandler
+/// <summary>
+/// 单个物品格子
+/// </summary>
+
+public class SlotUI : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("组件获取")]
     [SerializeField] private Image slotImage;
@@ -64,5 +68,29 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler
         if (itemAmount == 0) return;
         isSelected = !isSelected;
         inventoryUI.UpdateSlotHightLight(slotIndex);
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (itemAmount > 0)
+        {
+            inventoryUI.dragItem.enabled = true;
+            inventoryUI.dragItem.sprite = slotImage.sprite;
+            inventoryUI.dragItem.SetNativeSize();
+            isSelected = true;
+            inventoryUI.UpdateSlotHightLight(slotIndex);
+
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        inventoryUI.dragItem.transform.position = Input.mousePosition;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        inventoryUI.dragItem.enabled = false;
+        Debug.Log(eventData.pointerCurrentRaycast.gameObject);//当前拖拽碰撞的物体是谁
     }
 }
