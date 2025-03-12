@@ -7,6 +7,9 @@ namespace MFarm.Inventory
 {
     public class InventoryUI : MonoBehaviour
     {
+        [Header("玩家背包UI")]
+        [SerializeField] private GameObject bagUI;
+        private bool bagOpened;
         [SerializeField] private SlotUI[] playerSlots;
 
         private void OnEnable()
@@ -26,6 +29,15 @@ namespace MFarm.Inventory
             for (int i = 0; i < playerSlots.Length; i++)
             {
                 playerSlots[i].slotIndex = i;
+            }
+            bagOpened = bagUI.activeInHierarchy;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                OpenBagUI();
             }
         }
 
@@ -52,6 +64,12 @@ namespace MFarm.Inventory
                 default:
                     break;
             }
+        }
+
+        public void OpenBagUI()
+        {
+            bagOpened = !bagOpened;
+            bagUI.SetActive(bagOpened);
         }
     }
 
